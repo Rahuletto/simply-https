@@ -73,13 +73,11 @@ simply.post('url', {
 ### `httpsOptions`
 
 
-import Link from '@docusaurus/Link';
-
 | Parameter | Type | Required | Default    | Description |
 | --------- | ----- | -------- | -------- | ---------- |
-| `method`   | <Link to="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">`'GET'`/`'POST'`/`'PUT'`/`'PATCH'`/`'DELETE'`/`'HEAD'`/`'CONNECT'`/`'OPTIONS'`/`'TRACE'`</Link> | ❌  | "GET" | Provide a method to access the api |
-| `headers`   | <Link to="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">HTTPHeaders</Link> | ❌  | { 'Content-Type': 'application/json' } | The header of the request |
-| `body`   | <Link to="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</Link> | ❌  | _none_ | The body to send the request (cannot be used in 'GET' request) |
+| `method`   | [`'GET'`/`'POST'`/`'PUT'`/`'PATCH'`/`'DELETE'`/`'HEAD'`/`'CONNECT'`/`'OPTIONS'`/`'TRACE'`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | ❌  | "GET" | Provide a method to access the api |
+| `headers`   | [HTTPHeaders](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers) | ❌  | { 'Content-Type': 'application/json' } | The header of the request |
+| `body`   | [Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) | ❌  | _none_ | The body to send the request (cannot be used in 'GET' request) |
 
 -----------------------
 
