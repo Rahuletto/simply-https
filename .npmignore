@@ -1,0 +1,15 @@
+# Configs
+.gitignore
+.prettierrc.json
+**/*.tgz
+
+# Folders
+src/
+node_modules/
+.vscode/
+.github/
+
+# Files
+tsconfig.json
+https.ts
+gitpush.sh
