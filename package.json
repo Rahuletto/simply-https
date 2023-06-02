@@ -1,6 +1,6 @@
 {
   "name": "simply-https",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A light weight yet an efficient https module to make api requests",
   "main": "lib/https.js",
   "scripts": {
@@ -11,7 +11,25 @@
     "url": "git+https://github.com/Rahuletto/simply-https.git"
   },
   "keywords": [
-    "https"
+    "https",
+    "request",
+    "get",
+    "post",
+    "delete",
+    "put",
+    "patch",
+    "axios",
+    "fetch",
+    "node-fetch",
+    "api",
+    "call",
+    "node",
+    "node:https",
+    "http",
+    "website",
+    "backend",
+    "security",
+    "web"
   ],
   "author": "Rahuletto",
   "license": "CC-BY-NC-ND-4.0",
