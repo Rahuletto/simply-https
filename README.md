@@ -1,6 +1,6 @@
-# simply-https
+# ⚡ simply-https
 
-A light weight yet an efficient https module to make api requests
+A light weight yet an efficient HTTPS module to make API requests
 
 ### Summary
 
@@ -28,11 +28,11 @@ simply.https("url", {
 
 ```ts
 https(
-	url: string | httpsOptions,
-	options: httpsOptions = {
-		method: 'GET',
-		headers: { 'Content-Type': 'application/json' }
-	}
+ url: string | httpsOptions,
+ options: httpsOptions = {
+  method: 'GET',
+  headers: { 'Content-Type': 'application/json' }
+ }
 ): Promise<any>
 ```
 
