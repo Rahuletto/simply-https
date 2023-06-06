@@ -1,6 +1,6 @@
 {
   "name": "simply-https",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A light weight yet an efficient https module to make api requests",
   "main": "lib/https.js",
   "scripts": {
