@@ -122,6 +122,7 @@ export function https(
 						if (response.headers["content-type"].includes('application/json'))
 							resolve(JSON.parse(data));
 						else resolve(data)
+
 					} catch (e: any) {
 						// Some API sends html file as error. So this throws error if there is some
 						throw new HttpsError({
