@@ -2,9 +2,11 @@
 
 A light weight yet an efficient HTTPS module to make API requests
 
+> Bug Fixes
+
 ### Summary
 
-- [https()](#https)
+- [https()](#https) (Can handle all HTTP Request Methods)
 - [get()](#get)
 - [post()](#post)
 

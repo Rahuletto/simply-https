@@ -15,15 +15,15 @@ import { HttpsError } from "./src/error/HttpsError";
 
 export type httpsOptions = {
 	method:
-		| 'GET'
-		| 'POST'
-		| 'PUT'
-		| 'PATCH'
-		| 'DELETE'
-		| 'HEAD'
-		| 'CONNECT'
-		| 'OPTIONS'
-		| 'TRACE';
+	| 'GET'
+	| 'POST'
+	| 'PUT'
+	| 'PATCH'
+	| 'DELETE'
+	| 'HEAD'
+	| 'CONNECT'
+	| 'OPTIONS'
+	| 'TRACE';
 	headers: OutgoingHttpHeaders;
 	body?: object;
 
@@ -92,7 +92,7 @@ export function https(
 				hostname: hostUrl,
 				path: endpointUrl,
 				method: options.method,
-				headers: options.headers
+				headers: { ...options.headers, 'Content-Length': Buffer.byteLength(JSON.stringify(options?.body ?? {})) }
 			},
 			async (response) => {
 				// Handle any redirects
@@ -100,7 +100,7 @@ export function https(
 					return resolve(
 						await https(response.headers.location, {
 							method: options.method,
-							headers: options.headers,
+							headers: { ...options.headers, 'Content-Length': Buffer.byteLength(JSON.stringify(options?.body ?? {})) },
 							body: options.body
 						})
 					);
@@ -119,7 +119,10 @@ export function https(
 						}
 
 						// Resolve any object
-						resolve(JSON.parse(data));
+						if (response.headers["content-type"].includes('application/json'))
+							resolve(JSON.parse(data));
+						else resolve(data)
+
 					} catch (e: any) {
 						// Some API sends html file as error. So this throws error if there is some
 						throw new HttpsError({
@@ -131,7 +134,7 @@ export function https(
 		);
 
 		// Write body into the request if its other than GET method
-		if (options?.body) req.write(JSON.stringify(options.body));
+		req.write(JSON.stringify(options?.body ?? {}))
 
 		// closes the request
 		req.end();
